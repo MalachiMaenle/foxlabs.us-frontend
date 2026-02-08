@@ -1,4 +1,4 @@
-import {Component, signal} from '@angular/core';
+import {Component, signal, ViewEncapsulation} from '@angular/core';
 import {App} from "../app";
 
 @Component({
@@ -6,6 +6,7 @@ import {App} from "../app";
     imports: [],
     templateUrl: './gearbound.html',
     styleUrl: './gearbound.css',
+    encapsulation: ViewEncapsulation.None,
 })
 
 export class Gearbound {
