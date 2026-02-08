@@ -208,6 +208,12 @@ window.addEventListener('DOMContentLoaded', () => {
     let autoScrollTimeout = 0;
     const AUTO_RESUME_DELAY = 4000;
 
+    interface GalleryImage {
+        src: string;
+        title: string;
+        desc: string;
+    }
+
     function renderGallery() {
         const container = document.getElementById('gallery-track');
         const track = document.getElementById('gallery-track');
@@ -217,7 +223,7 @@ window.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        const renderSet = (list) => {
+        const renderSet = (list: GalleryImage[]) => {
             return list.map(img => `<div class="gallery-item"><img src="${img.src}" alt="${img.title}" loading="lazy"><div class="gallery-caption"><h4>${img.title}</h4><p>${img.desc}</p></div></div>`).join('');
         };
 
@@ -237,7 +243,8 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         }, { passive: false });
 
-        const items = track.querySelectorAll('.gallery-item');
+
+        const items = track.querySelectorAll('.gallery-item') as NodeListOf<HTMLElement>;;
         items.forEach(item => {
             item.onclick = function() {
                 handleUserInteraction();
@@ -271,7 +278,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     function animateMomentumScroll() {
-        const track = document.getElementById('gallery-track');
+        const track = document.getElementById('gallery-track') as HTMLElement;
 
         if(!isGalleryExpanded && Math.abs(scrollVelocity) > 0.5) {
             track.style.scrollBehavior = 'auto';
@@ -285,20 +292,20 @@ window.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(animateMomentumScroll);
     }
 
-    function snapToNearest(track) {
-        const items = track.querySelectorAll('.gallery-item');
-        let bestItem = null;
+    function snapToNearest(track: HTMLElement) {
+        const items = track.querySelectorAll('.gallery-item') as NodeListOf<HTMLElement>;
+        let bestItem: HTMLElement | null = null;
         let minDist = Infinity;
         const centerPoint = track.scrollLeft + (track.clientWidth / 2);
 
-        items.forEach(item => {
+        for (const item of items) {
             const itemCenter = item.offsetLeft + (item.offsetWidth / 2);
             const dist = Math.abs(centerPoint - itemCenter);
             if(dist < minDist) {
                 minDist = dist;
                 bestItem = item;
             }
-        });
+        }
 
         if(bestItem) {
             const targetPos = bestItem.offsetLeft + (bestItem.offsetWidth / 2) - (track.clientWidth / 2);
@@ -307,7 +314,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     function handleGalleryScroll() {
-        const track = document.getElementById('gallery-track');
+        const track = document.getElementById('gallery-track') as HTMLElement;
         const singleSetWidth = track.scrollWidth / 3;
 
         if (track.scrollLeft < 50) {
@@ -322,8 +329,10 @@ window.addEventListener('DOMContentLoaded', () => {
     function updateGalleryScaling() {
         if (isGalleryExpanded) return;
 
-        const track = document.getElementById('gallery-track');
-        const items = track.querySelectorAll('.gallery-item');
+        const track = document.getElementById('gallery-track') as HTMLElement;
+        if (!track) return;
+        const items = track.querySelectorAll('.gallery-item') as NodeListOf<HTMLElement>;
+        if (!items) return;
         const centerPoint = track.scrollLeft + (track.clientWidth / 2);
 
         items.forEach(item => {
@@ -348,7 +357,7 @@ window.addEventListener('DOMContentLoaded', () => {
             }
 
             item.style.transform = `scale(${scale})`;
-            item.style.opacity = opacity;
+            item.style.opacity = opacity.toString();
         });
     }
 
@@ -358,7 +367,9 @@ window.addEventListener('DOMContentLoaded', () => {
         galleryInterval = setInterval(() => {
             if(!isGalleryPaused && !isGalleryExpanded && Math.abs(scrollVelocity) < 1) {
                 const track = document.getElementById('gallery-track');
-                const items = track.querySelectorAll('.gallery-item');
+                if(!track)
+                {console.error("startGalleryAutoScroll track = null"); return;}
+                const items = track.querySelectorAll('.gallery-item') as NodeListOf<HTMLElement>;
 
                 let bestIndex = 0;
                 let minDistance = Infinity;
@@ -387,6 +398,8 @@ window.addEventListener('DOMContentLoaded', () => {
     function toggleGalleryPause() {
         isGalleryPaused = !isGalleryPaused;
         const btn = document.getElementById('galleryPauseBtn');
+        if(!btn)
+        {console.error("toggleGalleryPause btn = null"); return;}
         if(isGalleryPaused) {
             btn.classList.add('active');
             btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor"><path d="M3 2l10 5-10 5z"/></svg>'; // Play Icon
@@ -402,12 +415,16 @@ window.addEventListener('DOMContentLoaded', () => {
         const track = document.getElementById('gallery-track');
         const btn = document.getElementById('galleryExpandBtn');
         isGalleryExpanded = !isGalleryExpanded;
+        if(!btn)
+        {console.error("toggleGalleryExpand btn = null"); return;}
+        if(!track)
+        {console.error("toggleGalleryExpand track = null"); return;}
 
         if(isGalleryExpanded) {
             track.classList.add('expanded');
             btn.classList.add('active');
 
-            const items = track.querySelectorAll('.gallery-item');
+            const items = track.querySelectorAll('.gallery-item') as NodeListOf<HTMLElement>;
             items.forEach(item => {
                 item.style.transform = '';
                 item.style.opacity = '';
@@ -423,6 +440,8 @@ window.addEventListener('DOMContentLoaded', () => {
     function toggleScrollbar() {
         document.body.classList.toggle('hide-scrollbar');
         const btn = document.getElementById('galleryScrollbarBtn');
+        if(!btn)
+        {console.error("toggleScrollbar btn = null"); return;}
         btn.classList.toggle('active');
     }
 
