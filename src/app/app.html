@@ -1,11 +1,13 @@
-<nav>
-    <a href="#" class="nav-brand">FoxLabs</a>
-    <div class="nav-links">
-        <a class="nav-home" href="/">home</a>
-        <a class="nav-server-link" href="/prominence">prominence</a>
-        <a class="nav-server-link" href="/gearbound">gearbound</a>
-    </div>
-</nav>
+@if (!hideDefaultNav) {
+    <nav id="default-nav">
+        <a href="#" class="nav-brand">FoxLabs</a>
+        <div class="nav-links">
+            <a class="nav-home" href="/">home</a>
+            <a class="nav-server-link" href="/prominence">prominence</a>
+            <a class="nav-server-link" href="/gearbound">gearbound</a>
+        </div>
+    </nav>
+}
 <article>
     <router-outlet/>
     <div class="temp-spacer"></div>
