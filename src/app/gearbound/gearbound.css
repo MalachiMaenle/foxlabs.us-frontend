@@ -1342,8 +1342,10 @@ svg {
     vertical-align: middle;
 }
 
-footer {
-    background: #0a0a0a;
+.gearbound-footer {
+    position: relative;
+    z-index: 100;
+    background: #0a0a0aaa;
     text-align: center;
     padding: 3rem 2rem;
     border-top: 1px solid #222;
