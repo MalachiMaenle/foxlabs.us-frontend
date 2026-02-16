@@ -54,6 +54,35 @@ const galleryImages = [
     }
 ];
 
+
+// function openTab(tabId: string, clickedBtn: HTMLElement) {
+//     const tabs = document.querySelectorAll('tab-content');
+//     console.log(tabs);
+//
+//     tabs.forEach(tab => {
+//         console.log(tab);
+//         tab.classList.remove('active');
+//     })
+//     // const contents = document.querySelectorAll('.tab-content');
+//     // contents.forEach(content => content.classList.remove('active'));
+//     //
+//     // const buttons = document.querySelectorAll('.tab-btn');
+//     // buttons.forEach(btn => btn.classList.remove('active'));
+//     //
+//     // const target = document.getElementById(tabId);
+//     // if (target) target.classList.add('active');
+//     //
+//     // clickedBtn.classList.add('active');
+// }
+
+/*
+<div class="tabs">
+    <button class="tab-btn active" data-tab="curse-help" onclick="openTab('curse-help', this)">CurseForge</button>
+    <button class="tab-btn" data-tab="modrinth-help" onclick="openTab('modrinth-help', this)">Modrinth</button>
+    <button class="tab-btn" data-tab="prism-help" onclick="openTab('prism-help', this)">Prism</button>
+</div>
+ */
+
 function copyIP() {
     navigator.clipboard.writeText(serverIp).then(text => {
         const btn = document.querySelector<HTMLButtonElement>('.copy-btn');
@@ -166,6 +195,29 @@ window.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(animateGears);
     }
     animateGears();
+
+    const tabList = document.getElementById('tab-btn-list');
+    console.log(tabList);
+
+    tabList?.addEventListener('click', (e) => {
+        const target = e.target as HTMLElement;
+        const btn = target.closest('.tab-btn') as HTMLButtonElement | null;
+        if (!btn) return;
+
+        const tabId = btn.dataset["tab"];
+        if (!tabId) return;
+
+        document.querySelectorAll('.tab-content')
+            .forEach(c => c.classList.remove('active'));
+
+        tabList.querySelectorAll('.tab-btn')
+            .forEach(b => b.classList.remove('active'));
+
+        const content = document.getElementById(tabId);
+        if (content) content.classList.add('active');
+
+        btn.classList.add('active');
+    });
 
     function renderTeams() {
         const container = document.getElementById('teams-grid');

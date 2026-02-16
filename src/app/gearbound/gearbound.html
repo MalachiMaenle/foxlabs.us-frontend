@@ -249,10 +249,10 @@
 <div class="container" id="help">
     <div class="section-title">Installation Guide</div>
 
-    <div class="tabs">
-        <button class="tab-btn active" onclick="openTab('curse-help')">CurseForge</button>
-        <button class="tab-btn" onclick="openTab('modrinth-help')">Modrinth</button>
-        <button class="tab-btn" onclick="openTab('prism-help')">Prism</button>
+    <div id="tab-btn-list" class="tabs">
+        <button class="tab-btn active" data-tab="curse-help">CurseForge</button>
+        <button class="tab-btn" data-tab="modrinth-help">Modrinth</button>
+        <button class="tab-btn" data-tab="prism-help">Prism</button>
     </div>
 
     <!-- @CURSEFORGE @HELP -->
@@ -347,7 +347,7 @@
 </div>
 
 <!-- @HTML @FOOTER -->
-<footer>
+<footer class="gearbound-footer">
     <p>&copy; 2026 Gearbound Server. Not affiliated with Mojang AB.</p>
     <p style="font-size: 0.85rem; margin-top: 0.5rem; opacity: 0.6;">Textures inspired by the Create Mod.</p>
 
@@ -363,10 +363,10 @@
 </footer>
 
 
-<h1>GearBound Server</h1>
-<a href="/servers/gearbound/gearbound-curseforge.zip" download>Curseforge Download</a><br>
-<a href="/servers/gearbound/gearbound-modrinth.mrpack" download>Modrinth Download</a><br>
-<a href="/servers/gearbound/gearbound-prism.zip" download>Prism Download</a><br>
+<!--<h1>GearBound Server</h1>-->
+<!--<a href="/servers/gearbound/gearbound-curseforge.zip" download>Curseforge Download</a><br>-->
+<!--<a href="/servers/gearbound/gearbound-modrinth.mrpack" download>Modrinth Download</a><br>-->
+<!--<a href="/servers/gearbound/gearbound-prism.zip" download>Prism Download</a><br>-->
 
 <svg style="display: none;">
     <symbol id="app-link" viewBox="0 0 24 24">
