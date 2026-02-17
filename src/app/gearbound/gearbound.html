@@ -31,13 +31,13 @@
 <nav>
     <a href="#" class="nav-brand">Gearbound</a>
     <div class="nav-links" id="desktopNav">
-        <a href="#home" class="nav-item-home">Home</a>
-        <a href="#status" class="nav-item-status">Status</a>
-        <a href="#teams" class="nav-item-teams">Teams</a>
-        <a href="#gallery" class="nav-item-gallery">Gallery</a>
-        <a href="#downloads" class="nav-item-downloads">Downloads</a>
-        <a href="#help" class="nav-item-help">Help</a>
-        <a href="#about" class="nav-item-about">About</a>
+        <a (click)="scrollToSection('home')" class="nav-item-home" style="cursor: pointer;">Home</a>
+        <a (click)="scrollToSection('status')" class="nav-item-status" style="cursor: pointer;">Status</a>
+        <a (click)="scrollToSection('teams')" class="nav-item-teams" style="cursor: pointer;">Teams</a>
+        <a (click)="scrollToSection('gallery')" class="nav-item-gallery" style="cursor: pointer;">Gallery</a>
+        <a (click)="scrollToSection('downloads')" class="nav-item-downloads" style="cursor: pointer;">Downloads</a>
+        <a (click)="scrollToSection('help')" class="nav-item-help" style="cursor: pointer;">Help</a>
+        <a (click)="scrollToSection('about')" class="nav-item-about" style="cursor: pointer;">About</a>
     </div>
     <button class="hamburger">
         <span></span>
@@ -45,13 +45,13 @@
         <span></span>
     </button>
     <div class="mobile-menu" id="mobileMenu">
-        <a href="#home" class="mob-nav-item-home">Home</a>
-        <a href="#status" class="mob-nav-item-status">Status</a>
-        <a href="#teams" class="mob-nav-item-teams">Teams</a>
-        <a href="#gallery" class="mob-nav-item-gallery">Gallery</a>
-        <a href="#downloads" class="mob-nav-item-downloads">Downloads</a>
-        <a href="#help" class="mob-nav-item-help">Help</a>
-        <a href="#about" class="mob-nav-item-about">About</a>
+        <a (click)="scrollToSection('home')" class="mob-nav-item-home">Home</a>
+        <a (click)="scrollToSection('status')" class="mob-nav-item-status">Status</a>
+        <a (click)="scrollToSection('teams')" class="mob-nav-item-teams">Teams</a>
+        <a (click)="scrollToSection('gallery')" class="mob-nav-item-gallery">Gallery</a>
+        <a (click)="scrollToSection('downloads')" class="mob-nav-item-downloads">Downloads</a>
+        <a (click)="scrollToSection('help')" class="mob-nav-item-help">Help</a>
+        <a (click)="scrollToSection('about')" class="mob-nav-item-about">About</a>
     </div>
 
 </nav>
@@ -59,10 +59,10 @@
 <!-- @HTML @HEADER @HERO -->
 <header id="home">
     <div class="logo-container">
-        <img src="image_bb4f0d.png" alt="Gearbound Title Image">
-    </div>
-    <h2 class="hero-title">Over Stars</h2>
-    <p class="hero-subtitle">An industrial journey beyond the horizon. Built with Create.</p>
+        <img ngSrc="../../../assets/gearbound/GearBoundTitle.webp" alt="Gearbound Title Image" height="715"
+             width="2048"/></div>
+    <h2 class="hero-title">Cabin</h2>
+    <p class="hero-subtitle">A create focused modpack</p>
 
     <div class="server-ip-box">
         <span>gearbound.exphost.net</span>
@@ -93,7 +93,7 @@
 <div class="container" id="teams">
     <div class="section-title">GearBound Teams</div>
     <div id="teams-grid" class="grid">
-        <!-- Teams will be injected here via JavaScript -->
+        <!-- Teams will be injected through .ts -->
     </div>
 </div>
 
@@ -104,14 +104,14 @@
     <div class="gallery-controls">
         <button class="gallery-control-btn" id="galleryPauseBtn" onclick="toggleGalleryPause()"
                 title="Pause Auto-Scroll">
-            <!-- Pause Icon -->
+            <!-- @PAUSE @ICON -->
             <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
                 <rect x="3" y="2" width="3" height="10" rx="1"/>
                 <rect x="8" y="2" width="3" height="10" rx="1"/>
             </svg>
         </button>
         <button class="gallery-control-btn" id="galleryExpandBtn" onclick="toggleGalleryExpand()" title="Expand View">
-            <!-- Grid Icon -->
+            <!-- @GRID @ICON -->
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
                 <rect x="1" y="1" width="6" height="6" rx="1"/>
                 <rect x="9" y="1" width="6" height="6" rx="1"/>
@@ -121,7 +121,7 @@
         </button>
     </div>
 
-    <!-- NEW: Gallery Tabs (Only visible when expanded) -->
+    <!-- @GALLERY @TABS -->
     <div class="gallery-sub-tabs" id="gallery-sub-tabs">
         <button class="tab-btn active" onclick="filterGallery('modpack')">Modpack Showcase</button>
         <button class="tab-btn" onclick="filterGallery('terrain')">Terrain Gen</button>
@@ -130,7 +130,7 @@
 
     <div class="gallery-track-container">
         <div id="gallery-track" class="gallery-track">
-            <!-- Images will be injected here via JavaScript -->
+            <!-- Images will be injected here through .ts -->
         </div>
     </div>
 </div>
@@ -150,7 +150,7 @@
             <p>Explore the GearBound world in real-time 3D through your browser.</p>
 
             <div class="action-row" style="justify-content: center;">
-                <a href="http://map.gearbound.com" target="_blank" class="btn btn-bluemap">
+                <a href="http://37.114.50.115:25717/#world:-953:0:-144:1500:0:0:0:0:perspective" target="_blank" class="btn btn-bluemap">
                         <span class="icon-box">
                             <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path
                                 d="M512 96c0-14.2-9.6-26.6-23.3-30.1L266 9.6c-6.4-1.6-13.2-1.6-19.6 0L23.3 65.9C9.6 69.4 0 81.8 0 96v352c0 14.2 9.6 26.6 23.3 30.1l222.7 56.3c6.4 1.6 13.2 1.6 19.6 0l222.7-56.3c13.7-3.5 23.3-15.9 23.3-30.1V96z"/></svg>
@@ -166,27 +166,29 @@
 <div class="container" id="downloads">
     <div class="section-title">Select Your Platform</div>
     <div class="grid">
-        <!-- @CURSEFORGE -->
-        <div class="card card-curse" id="curseforge">
+        <!-- @PRISM @RECOMMENDED -->
+        <div class="card card-prism" id="prism">
+            <div class="badge-recommended">Recommended</div>
             <div class="rivet tl"></div>
             <div class="rivet tr"></div>
             <div class="rivet bl"></div>
             <div class="rivet br"></div>
             <div>
                 <h3>
-                    CurseForge
-                    <span class="card-emoji">&#128293;</span>
+                    Prism
+                    <span class="card-emoji">&#128142;</span>
                 </h3>
-                <p>The standard way to go however <br> it doesnt offer automatic updates yet</p>
+                <p>Light weight launcher option <br> NOTE: this is the recommended installation as it offers automatic
+                    updates</p>
             </div>
 
             <div class="action-row">
-                <a href="/src/assets/" download="" target="_blank" class="btn btn-curse">
+                <a href="/src/assets/" download="" target="_blank" class="btn btn-prism">
                         <span class="icon-box">
                             <svg viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path
-                                d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path></svg>
+                                    d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path></svg>
                         </span>
-                    Download .zip
+                    Download .ZIP
                 </a>
             </div>
         </div>
@@ -216,29 +218,27 @@
             </div>
         </div>
 
-        <!-- @PRISM @RECOMMENDED -->
-        <div class="card card-prism" id="prism">
-            <div class="badge-recommended">Recommended</div>
+        <!-- @CURSEFORGE -->
+        <div class="card card-curse" id="curseforge">
             <div class="rivet tl"></div>
             <div class="rivet tr"></div>
             <div class="rivet bl"></div>
             <div class="rivet br"></div>
             <div>
                 <h3>
-                    Prism
-                    <span class="card-emoji">&#128142;</span>
+                    CurseForge
+                    <span class="card-emoji">&#128293;</span>
                 </h3>
-                <p>Light weight launcher option <br> NOTE: this is the recommended installation as it offers automatic
-                    updates</p>
+                <p>The standard way to go however <br> it doesnt offer automatic updates yet</p>
             </div>
 
             <div class="action-row">
-                <a href="/src/assets/" download="" target="_blank" class="btn btn-prism">
+                <a href="/src/assets/" download="" target="_blank" class="btn btn-curse">
                         <span class="icon-box">
                             <svg viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path
-                                d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path></svg>
+                                    d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path></svg>
                         </span>
-                    Download .ZIP
+                    Download .zip
                 </a>
             </div>
         </div>
@@ -246,7 +246,7 @@
 </div>
 
 <!-- @HTML @GUIDE @INSTALLATION -->
-<div class="container" id="help">
+<div class="container container-thin" id="help">
     <div class="section-title">Installation Guide</div>
 
     <div id="tab-btn-list" class="tabs">
@@ -308,11 +308,28 @@
         <h3>Prism installation guide</h3>
         <ol>
             <li>Download the<a href="#prism" class="nav-brand"> zip file </a>above</li>
-            <li>Open Prism Launcher</li>
-            <li>Click "Add Instance" (top left)</li>
-            <li>Select "Import from zip" and browse for the file you downloaded</li>
-            <li>Click "OK" and let it download the mods</li>
-            <li>Double click the new instance to play</li>
+            <li>Open Prism Launcher <a href="prismlauncher://">
+                <svg class="icon">
+                    <use href="#app-link"></use>
+                </svg>
+            </a></li>
+            <li>Click
+                <svg class="icon">
+                    <use href="#import-prism"></use>
+                </svg>
+                add instance
+                (on the top left on the launcher)
+            </li>
+            <li>Select <span class="modrinth-icon modrinth-style-button"><svg class="icon "><use
+                    href="#folder-modrinth"></use></svg>Import</span>
+            </li>
+            <li>Then click "browse"</li>
+            <li>Then click
+                <span class="modrinth-icon modrinth-style-button">
+                    Browse
+                </span>
+            </li>
+            <li>and double click the file you downloaded earlier</li>
         </ol>
     </div>
 </div>
@@ -321,9 +338,15 @@
 <div class="container" id="about">
     <div class="section-title">About Gearbound</div>
     <p class="about-text">
-        Gearbound is a community focused on industrial automation and aesthetic building.
-        The <strong>Over Stars</strong> modpack is our latest creation, featuring a carefully curated list of mods
-        centered around the <em>Create</em> mod, optimized for performance and multiplayer stability.
+        Hello there ^-^ <br>
+        Gearbound is a Create focused community, <br>
+        aiming to bring automatisation to the world of Minecraft, <br>
+        We started as a group of friends who slowly over the years all met on this smp, <br>
+        trying out modpacks one after the other and <br>
+        then slowly started customizing the packs we played <br>
+        customizing them how we liked <br>
+        <br>
+        and now here we are also offering you a place to try out all your ideas <br>
     </p>
 
     <!-- @HTML @DISCORD -->
@@ -334,7 +357,7 @@
             <div class="rivet bl"></div>
             <div class="rivet br"></div>
             <h3>Join the Community</h3>
-            <p>Find us on Discord for support, voice chat, and announcements.</p>
+            <p>Find us on Discord for support, meeting the community and showing of your builds </p>
             <!-- UPDATE DISCORD LINK HERE -->
             <a href="https://discord.gg/8VkeVVuceC" target="_blank" class="btn btn-discord">
                 Join Discord
@@ -348,8 +371,8 @@
 
 <!-- @HTML @FOOTER -->
 <footer class="gearbound-footer">
-    <p>&copy; 2026 Gearbound Server. Not affiliated with Mojang AB.</p>
-    <p style="font-size: 0.85rem; margin-top: 0.5rem; opacity: 0.6;">Textures inspired by the Create Mod.</p>
+    <p>Gearbound is a free minecraft SMP since 20xx</p>
+    <p style="font-size: 0.85rem; margin-top: 0.5rem; opacity: 0.6;">focused on the create mod, happy building</p>
 
     <div class="footer-controls">
         <button class="footer-btn btn-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Back to Top">
@@ -361,12 +384,6 @@
         </button>
     </div>
 </footer>
-
-
-<!--<h1>GearBound Server</h1>-->
-<!--<a href="/servers/gearbound/gearbound-curseforge.zip" download>Curseforge Download</a><br>-->
-<!--<a href="/servers/gearbound/gearbound-modrinth.mrpack" download>Modrinth Download</a><br>-->
-<!--<a href="/servers/gearbound/gearbound-prism.zip" download>Prism Download</a><br>-->
 
 <svg style="display: none;">
     <symbol id="app-link" viewBox="0 0 24 24">
