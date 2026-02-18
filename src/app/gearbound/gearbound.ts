@@ -47,30 +47,75 @@ export class Gearbound implements AfterViewInit, OnDestroy {
     // Gallery Data
     private galleryImages = [
         {
-            src: "https://via.placeholder.com/1200x800/2d2d2d/eebb66?text=Central+Station",
-            title: "Central Station",
-            desc: "The heart of the railway network."
+            src: "../../../assets/gearbound/screenshots/placeholder/2026-02-03_07.24.47.png",
+            title: "Cave",
+            desc: "Shader: Eclipse <br> placeholder image for community made images"
         },
         {
-            src: "https://via.placeholder.com/1200x800/3d2d2d/ea936b?text=Nether+Fortress+Base",
-            title: "Nether Hub",
-            desc: "Dangerous industrial complex."
+            src: "../../../assets/gearbound/screenshots/placeholder/2026-02-03_07.29.29.png",
+            title: "Ancient city",
+            desc: "Shader: Eclipse <br> placeholder image for community made images"
         },
         {
-            src: "https://via.placeholder.com/1200x800/2d3d2d/4dd39e?text=Bio-Dome",
-            title: "The Bio-Dome",
-            desc: "Preserving nature in glass."
+            src: "../../../assets/gearbound/screenshots/placeholder/2026-02-03_07.30.48.png",
+            title: "the Nether!",
+            desc: "Shader: Eclipse <br> placeholder image for community made images"
         },
         {
-            src: "https://via.placeholder.com/1200x800/2d2d3d/84abe7?text=Sky+Factory",
-            title: "Sky Factory",
-            desc: "High altitude assembly lines."
+            src: "../../../assets/gearbound/screenshots/placeholder/2026-02-03_07.31.02.png",
+            title: "A Cozy Place",
+            desc: "Shader: Eclipse <br> placeholder image for community made images"
         },
         {
-            src: "https://via.placeholder.com/1200x800/403030/eebb66?text=Steam+Engine",
-            title: "Steam Power Plant",
-            desc: "Providing SU for the masses."
-        }
+            src: "../../../assets/gearbound/screenshots/placeholder/2026-02-03_07.33.06.png",
+            title: "Spooky Scary Skelleton",
+            desc: "Shader: Eclipse <br> placeholder image for community made images"
+        },
+        {
+            src: "../../../assets/gearbound/screenshots/placeholder/2026-02-03_07.35.26.png",
+            title: "Epic end fight soon?",
+            desc: "Shader: Eclipse <br> placeholder image for community made images"
+        },
+        {
+            src: "../../../assets/gearbound/screenshots/placeholder/2026-02-03_07.38.01.png",
+            title: "End citys from a long time ago",
+            desc: "Shader: Eclipse <br> placeholder image for community made images"
+        },
+        {
+            src: "../../../assets/gearbound/screenshots/placeholder/2026-02-03_13.59.39.png",
+            title: "A Cold night",
+            desc: "Shader: Eclipse <br> placeholder image for community made images"
+        },
+        {
+            src: "../../../assets/gearbound/screenshots/placeholder/2026-02-03_13.59.39.png",
+            title: "A Cold night",
+            desc: "Shader: Eclipse <br> placeholder image for community made images"
+        },
+        {
+            src: "../../../assets/gearbound/screenshots/placeholder/2026-02-04_03.47.03.png",
+            title: "Caves",
+            desc: "Looks good even in vanilla <br> placeholder image for community made images"
+        },
+        {
+            src: "../../../assets/gearbound/screenshots/placeholder/2026-02-04_03.55.40.png",
+            title: "A Undrground Eco System",
+            desc: "Shader: Eclipse <br> placeholder image for community made images"
+        },
+        {
+            src: "../../../assets/gearbound/screenshots/placeholder/2026-02-04_04.00.39.png",
+            title: "???",
+            desc: "Shader: Eclipse <br> placeholder image for community made images"
+        },
+        {
+            src: "../../../assets/gearbound/screenshots/placeholder/2026-02-16_10.13.44.png",
+            title: "Another Night Survived!",
+            desc: "Shader: Eclipse <br> placeholder image for community made images"
+        },
+        {
+            src: "../../../assets/gearbound/screenshots/placeholder/2026-02-16_10.22.03.png",
+            title: "Desert",
+            desc: "Shader: Eclipse <br> placeholder image for community made images"
+        },
     ];
 
     // Gallery State

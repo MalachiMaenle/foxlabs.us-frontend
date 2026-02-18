@@ -280,7 +280,7 @@ nav {
 }
 
 
-.mobile-menu {
+.drop-down {
     display: none;
     flex-direction: column;
     position: absolute;
@@ -298,7 +298,7 @@ nav {
     z-index: 1050;
 }
 
-.mobile-menu a {
+.drop-down a {
     /* text */
     font-weight: 600;
     font-size: 1.1rem;
@@ -313,12 +313,12 @@ nav {
     transition: background 0.2s;
 }
 
-.mobile-menu.active {
+.drop-down.active {
     display: flex;
     animation: slideIn 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.mobile-menu a:hover {
+.drop-down a:hover {
     background: rgba(238, 187, 102, 0.1);
     color: var(--brass-l);
 }

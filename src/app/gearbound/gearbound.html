@@ -43,13 +43,13 @@
 
     <!-- @NAV @ICON -->
     <button class="hamburger" (click)="toggleMenu()" [class.active]="isMenuOpen">
-        <span></span>
-        <span></span>
+        <span></span> <!-- Supposed to be empty -->
+        <span></span> <!-- They make up the icon -->
         <span></span>
     </button>
 
     <!-- @NAV @DROPDOWN -->
-    <div class="mobile-menu" id="mobileMenu" [class.active]="isMenuOpen">
+    <div class="drop-down" id="drop-down" [class.active]="isMenuOpen">
         <a (click)="scrollToSection('status')" class="mob-nav-item-status">Status</a>
         <a (click)="scrollToSection('teams')" class="mob-nav-item-teams">Teams</a>
         <a (click)="scrollToSection('gallery')" class="mob-nav-item-gallery">Gallery</a>
@@ -62,7 +62,7 @@
 <!-- @HTML @HEADER -->
 <header id="home">
     <div class="logo-container">
-        <img ngSrc="../../../assets/gearbound/GearBoundTitle.webp"
+        <img ngSrc="../../../assets/gearbound/title/GearBoundTitle.webp"
              alt="Gearbound Title Image"
              height="715" width="2048"
              priority
@@ -107,18 +107,17 @@
 <!-- @HTML @GALLERY -->
 <div class="container" id="gallery">
     <div class="section-title">Gallery</div>
-
     <div class="gallery-controls">
+        <!-- @PAUSE @ICON @BUTTON -->
         <button class="gallery-control-btn" id="galleryPauseBtn" onclick="toggleGalleryPause()"
                 title="Pause Auto-Scroll">
-            <!-- @PAUSE @ICON -->
             <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
                 <rect x="3" y="2" width="3" height="10" rx="1"/>
                 <rect x="8" y="2" width="3" height="10" rx="1"/>
             </svg>
         </button>
+        <!-- @GRID @ICON @BUTTON -->
         <button class="gallery-control-btn" id="galleryExpandBtn" onclick="toggleGalleryExpand()" title="Expand View">
-            <!-- @GRID @ICON -->
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
                 <rect x="1" y="1" width="6" height="6" rx="1"/>
                 <rect x="9" y="1" width="6" height="6" rx="1"/>
@@ -142,7 +141,7 @@
     </div>
 </div>
 
-<!-- @HTML @BLUEMAP @MAP -->
+<!-- @BLUEMAP @MAP -->
 <div class="container" id="bluemap-section">
     <div class="grid" style="max-width: 800px; margin: 0 auto;">
         <div class="card card-bluemap" style="text-align: center;">
