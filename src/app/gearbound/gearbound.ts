@@ -87,11 +87,6 @@ export class Gearbound implements AfterViewInit, OnDestroy {
             desc: "Shader: Eclipse <br> placeholder image for community made images"
         },
         {
-            src: "../../../assets/gearbound/screenshots/placeholder/2026-02-03_13.59.39.png",
-            title: "A Cold night",
-            desc: "Shader: Eclipse <br> placeholder image for community made images"
-        },
-        {
             src: "../../../assets/gearbound/screenshots/placeholder/2026-02-04_03.47.03.png",
             title: "Caves",
             desc: "Looks good even in vanilla <br> placeholder image for community made images"
@@ -323,8 +318,7 @@ export class Gearbound implements AfterViewInit, OnDestroy {
         });
 
         setTimeout(() => {
-            const singleSetWidth = track.scrollWidth / 3;
-            track.scrollLeft = singleSetWidth;
+            track.scrollLeft = track.scrollWidth / 3;
             this.updateGalleryScaling();
             this.startGalleryAutoScroll();
         }, 100);
@@ -338,7 +332,7 @@ export class Gearbound implements AfterViewInit, OnDestroy {
                 if (!this.isGalleryExpanded && Math.abs(this.scrollVelocity) > 0.5) {
                     track.style.scrollBehavior = 'auto';
                     track.scrollLeft += this.scrollVelocity;
-                    this.scrollVelocity *= 0.95;
+                    this.scrollVelocity *= 0.92;
                 } else if (Math.abs(this.scrollVelocity) <= 0.5 && this.scrollVelocity !== 0) {
                     this.scrollVelocity = 0;
                     track.style.scrollBehavior = '';
