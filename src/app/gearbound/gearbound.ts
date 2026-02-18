@@ -17,6 +17,11 @@ export class Gearbound implements AfterViewInit, OnDestroy {
     private serverIp = "gearbound.exphost.net";
     private animationFrameId: number | null = null;
     private galleryInterval: any = 0;
+    protected isMenuOpen = false;
+
+    toggleMenu() {
+        this.isMenuOpen = !this.isMenuOpen;
+    }
 
     scrollToSection(sectionId: string) {
         const element = document.getElementById(sectionId);

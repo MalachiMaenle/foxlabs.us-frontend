@@ -27,9 +27,11 @@
     </svg>
 </div>
 
-<!-- @HTML @NAV -->
+<!-- @NAV -->
 <nav>
     <a href="#" class="nav-brand">Gearbound</a>
+
+    <!-- @NAV @TOP -->
     <div class="nav-links" id="desktopNav">
         <a (click)="scrollToSection('status')" class="nav-item-status" style="cursor: pointer;">Status</a>
         <a (click)="scrollToSection('teams')" class="nav-item-teams" style="cursor: pointer;">Teams</a>
@@ -38,12 +40,16 @@
         <a (click)="scrollToSection('help')" class="nav-item-help" style="cursor: pointer;">Help</a>
         <a (click)="scrollToSection('about')" class="nav-item-about" style="cursor: pointer;">About</a>
     </div>
-    <button class="hamburger">
+
+    <!-- @NAV @ICON -->
+    <button class="hamburger" (click)="toggleMenu()" [class.active]="isMenuOpen">
         <span></span>
         <span></span>
         <span></span>
     </button>
-    <div class="mobile-menu" id="mobileMenu">
+
+    <!-- @NAV @DROPDOWN -->
+    <div class="mobile-menu" id="mobileMenu" [class.active]="isMenuOpen">
         <a (click)="scrollToSection('status')" class="mob-nav-item-status">Status</a>
         <a (click)="scrollToSection('teams')" class="mob-nav-item-teams">Teams</a>
         <a (click)="scrollToSection('gallery')" class="mob-nav-item-gallery">Gallery</a>
@@ -51,7 +57,6 @@
         <a (click)="scrollToSection('help')" class="mob-nav-item-help">Help</a>
         <a (click)="scrollToSection('about')" class="mob-nav-item-about">About</a>
     </div>
-
 </nav>
 
 <!-- @HTML @HEADER -->
