@@ -22,7 +22,8 @@
 						"assets": [
 							{
 								"glob": "**/*",
-								"input": "assests"
+                                "input": "assets",
+                                "output": "/assets"
 							}
 						],
 						"styles": [

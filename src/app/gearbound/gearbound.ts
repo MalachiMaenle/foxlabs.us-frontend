@@ -102,7 +102,7 @@ export class Gearbound implements AfterViewInit, OnDestroy {
         }
     }
 
-    // -- Gears Animation (Now with Momentum!) --
+    // @GEARRS @INIT
     private initGears() {
         const scroller = document.querySelector('article');
         const gearLeft = document.getElementById('gearLeft');
@@ -280,6 +280,7 @@ export class Gearbound implements AfterViewInit, OnDestroy {
         }, 100);
     }
 
+    // @GALLERY @INIT @MOVEMENT
     private initGalleryMomentum() {
         const animate = () => {
             const track = document.getElementById('gallery-track');
@@ -344,6 +345,7 @@ export class Gearbound implements AfterViewInit, OnDestroy {
         });
     }
 
+    // @GALLERY @AUTO @SCROLL
     private startGalleryAutoScroll() {
         if (this.galleryInterval) clearInterval(this.galleryInterval);
 
@@ -378,6 +380,7 @@ export class Gearbound implements AfterViewInit, OnDestroy {
         }, 5000);
     }
 
+    // @GALLERY @SNAP
     private snapToNearest(track: HTMLElement) {
         const items = track.querySelectorAll('.gallery-item') as NodeListOf<HTMLElement>;
         let bestItem: HTMLElement | null = null;

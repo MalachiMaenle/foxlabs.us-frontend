@@ -31,7 +31,6 @@
 <nav>
     <a href="#" class="nav-brand">Gearbound</a>
     <div class="nav-links" id="desktopNav">
-        <a (click)="scrollToSection('home')" class="nav-item-home" style="cursor: pointer;">Home</a>
         <a (click)="scrollToSection('status')" class="nav-item-status" style="cursor: pointer;">Status</a>
         <a (click)="scrollToSection('teams')" class="nav-item-teams" style="cursor: pointer;">Teams</a>
         <a (click)="scrollToSection('gallery')" class="nav-item-gallery" style="cursor: pointer;">Gallery</a>
@@ -45,7 +44,6 @@
         <span></span>
     </button>
     <div class="mobile-menu" id="mobileMenu">
-        <a (click)="scrollToSection('home')" class="mob-nav-item-home">Home</a>
         <a (click)="scrollToSection('status')" class="mob-nav-item-status">Status</a>
         <a (click)="scrollToSection('teams')" class="mob-nav-item-teams">Teams</a>
         <a (click)="scrollToSection('gallery')" class="mob-nav-item-gallery">Gallery</a>
@@ -56,11 +54,15 @@
 
 </nav>
 
-<!-- @HTML @HEADER @HERO -->
+<!-- @HTML @HEADER -->
 <header id="home">
     <div class="logo-container">
-        <img ngSrc="../../../assets/gearbound/GearBoundTitle.webp" alt="Gearbound Title Image" height="715"
-             width="2048"/></div>
+        <img ngSrc="../../../assets/gearbound/GearBoundTitle.webp"
+             alt="Gearbound Title Image"
+             height="715" width="2048"
+             priority
+        />
+    </div>
     <h2 class="hero-title">Cabin</h2>
     <p class="hero-subtitle">A create focused modpack</p>
 
@@ -183,7 +185,7 @@
             </div>
 
             <div class="action-row">
-                <a href="/src/assets/" download="" target="_blank" class="btn btn-prism">
+                <a href="/assets/" download="" target="_blank" class="btn btn-prism">
                         <span class="icon-box">
                             <svg viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path
                                     d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path></svg>
@@ -208,7 +210,7 @@
             </div>
 
             <div class="action-row">
-                <a href="/src/assets/" download="" target="_blank" class="btn btn-modrinth">
+                <a href="/assets/" download="" target="_blank" class="btn btn-modrinth">
                         <span class="icon-box">
                             <svg viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path
                                 d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path></svg>
@@ -233,7 +235,7 @@
             </div>
 
             <div class="action-row">
-                <a href="/src/assets/" download="" target="_blank" class="btn btn-curse">
+                <a href="/assets/" download="" target="_blank" class="btn btn-curse">
                         <span class="icon-box">
                             <svg viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path
                                     d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path></svg>
