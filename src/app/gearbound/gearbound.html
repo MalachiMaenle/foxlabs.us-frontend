@@ -150,17 +150,16 @@
             <div class="rivet bl"></div>
             <div class="rivet br"></div>
             <h3>
-                Live World Map
+                World Map
                 <span class="card-emoji">🌍</span>
             </h3>
-            <p>Explore the GearBound world in real-time 3D through your browser.</p>
+            <p>Explore the GearBound SMP in 3D through your browser.</p>
 
             <div class="action-row" style="justify-content: center;">
                 <a href="http://37.114.50.115:25717/#world:-953:0:-144:1500:0:0:0:0:perspective" target="_blank" class="btn btn-bluemap">
-                        <span class="icon-box">
-                            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path
-                                d="M512 96c0-14.2-9.6-26.6-23.3-30.1L266 9.6c-6.4-1.6-13.2-1.6-19.6 0L23.3 65.9C9.6 69.4 0 81.8 0 96v352c0 14.2 9.6 26.6 23.3 30.1l222.7 56.3c6.4 1.6 13.2 1.6 19.6 0l222.7-56.3c13.7-3.5 23.3-15.9 23.3-30.1V96z"/></svg>
-                        </span>
+                    <span class="icon-box" >
+                        <svg class="icon" style="width: 18px; height: 18px;"><use href="#bluemap-icon"></use></svg>
+                    </span>
                     Open BlueMap
                 </a>
             </div>
@@ -352,33 +351,52 @@
         and now here we are also offering you a place to try out all your ideas <br>
     </p>
 
-    <!-- @HTML @DISCORD -->
-    <div class="grid" style="max-width: 800px; margin: 0 auto;">
+    <!-- @STOAT -->
+    <div class="grid container" style="max-width: 800px; margin: 0 auto;">
+        <div class="card card-stoat" style="text-align: center;">
+            <div class="rivet tl"></div>
+            <div class="rivet tr"></div>
+            <div class="rivet bl"></div>
+            <div class="rivet br"></div>
+            <h3>Join the Stoat Community</h3>
+            <p>Join us on Soat for support, meeting the community and showing of your builds </p>
+            <!-- UPDATE DISCORD LINK HERE -->
+            <a href="https://discord.gg/8VkeVVuceC" target="_blank" class="btn btn-stoat">
+                Join Stoat
+                <span class="icon-box">
+                    <svg class="icon"><use href="#discord-arrow"></use></svg>
+                </span>
+            </a>
+        </div>
+    </div>
+
+    <!-- @DISCORD -->
+    <div class="grid container" style="max-width: 800px; margin: 0 auto;">
         <div class="card card-discord" style="text-align: center;">
             <div class="rivet tl"></div>
             <div class="rivet tr"></div>
             <div class="rivet bl"></div>
             <div class="rivet br"></div>
-            <h3>Join the Community</h3>
-            <p>Find us on Discord for support, meeting the community and showing of your builds </p>
+            <h3>Join the Discord Community</h3>
+            <p>Join us on Discord for support, meeting the community and showing of your builds </p>
             <!-- UPDATE DISCORD LINK HERE -->
             <a href="https://discord.gg/8VkeVVuceC" target="_blank" class="btn btn-discord">
                 Join Discord
                 <span class="icon-box">
-                        <svg class="icon"><use href="#discord-arrow"></use></svg>
-                    </span>
+                    <svg class="icon"><use href="#discord-arrow"></use></svg>
+                </span>
             </a>
         </div>
     </div>
 </div>
 
-<!-- @HTML @FOOTER -->
+<!-- @FOOTER -->
 <footer class="gearbound-footer">
     <p>free minecraft SMP since 2022</p>
-    <p style="font-size: 0.85rem; margin-top: 0.5rem; opacity: 0.6;">focused on the create mod, happy building</p>
+    <p style="font-size: 0.85rem; margin-top: 0.5rem; opacity: 0.6;">focused on the create mod, happy creating</p>
 
     <div class="footer-controls">
-        <button class="footer-btn btn-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Back to Top">
+        <button class="footer-btn btn-top" (click)="scrollToSection('home')" title="Back to Top">
             <svg viewBox="0 0 384 512"
                  style="width: 14px; height: 14px; fill: currentColor; transform: rotate(180deg);">
                 <path
@@ -426,12 +444,16 @@
         </g>
     </symbol>
 
-
     <symbol id="discord-arrow" viewBox="0 0 384 512">
         <g transform="translate(-100, 0)">
             <path
                 d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path>
         </g>
+    </symbol>
+
+    <symbol id="bluemap-icon" viewBox="2 2 20 20">
+        <path d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z"
+              stroke="#FFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
 </svg>
 </body>

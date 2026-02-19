@@ -29,6 +29,10 @@ body {
     --discord: #5865F2;
     --discord-d: #3944b3;
 
+    --stoat-l: #CEA2DB;
+    --stoat: #C35D9E;
+    --stoat-d: #F02978;
+
     /* @CSS @COLORS @BLUEMAP */
     --bluemap-l: #3a8ee6;
     --bluemap: #006cdb;
@@ -376,11 +380,9 @@ header {
 }
 
 .icon {
-    width: 26px;
-    height: 26px;
+    width: 28px;
+    height: 28px;
     vertical-align: middle;
-    position: relative;
-    top: -4px;
 }
 
 .modrinth-icon {
@@ -646,6 +648,11 @@ header {
     --card-bloom: rgb(from var(--discord) r g b / 0.6);
 }
 
+.card-stoat {
+    --card-accent: var(--stoat);
+    --card-bloom: rgb(from var(--stoat) r g b / 0.6);
+}
+
 .card-bluemap {
     --card-accent: var(--bluemap);
     --card-bloom: rgb(from var(--bluemap) r g b / 0.6);
@@ -713,6 +720,15 @@ header {
     background: linear-gradient(135deg, var(--discord), var(--discord-d));
     box-shadow: 0 4px 15px rgb(from var(--discord-d) r g b / 0.6);
     --hover-color: var(--discord-l);
+    width: auto;
+    display: inline-flex;
+    padding: 0 2rem;
+}
+
+.btn-stoat {
+    background: linear-gradient(135deg, var(--stoat), var(--stoat-d));
+    box-shadow: 0 4px 15px rgb(from var(--stoat-d) r g b / 0.6);
+    --hover-color: var(--stoat-l);
     width: auto;
     display: inline-flex;
     padding: 0 2rem;

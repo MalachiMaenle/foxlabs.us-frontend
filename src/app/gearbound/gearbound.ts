@@ -13,7 +13,7 @@ import {NgOptimizedImage} from "@angular/common";
 })
 export class Gearbound implements AfterViewInit, OnDestroy {
 
-    // -- Data --
+    // -- Data -- //
     private serverIp = "gearbound.exphost.net";
     private animationFrameId: number | null = null;
     private galleryInterval: any = 0;
@@ -43,6 +43,14 @@ export class Gearbound implements AfterViewInit, OnDestroy {
             members: ["PreChecked", "AsealGuy", "D505"]
         }
     ];
+
+    // Gallery States
+    private isGalleryPaused = false;
+    private isGalleryExpanded = false;
+    private scrollVelocity = 0;
+    private isHoveringGallery = false;
+    private autoScrollTimeout: any = 0;
+    private readonly AUTO_RESUME_DELAY = 4000;
 
     // Gallery Data
     private galleryImages = [
@@ -113,14 +121,6 @@ export class Gearbound implements AfterViewInit, OnDestroy {
         },
     ];
 
-    // Gallery State
-    private isGalleryPaused = false;
-    private isGalleryExpanded = false;
-    private scrollVelocity = 0;
-    private isHoveringGallery = false;
-    private autoScrollTimeout: any = 0;
-    private readonly AUTO_RESUME_DELAY = 4000;
-
     constructor(private ngZone: NgZone) {}
 
     ngAfterViewInit() {
@@ -129,7 +129,7 @@ export class Gearbound implements AfterViewInit, OnDestroy {
             this.initGalleryMomentum();
         });
 
-        // Initialize UI logic
+        // @INIT @ALL
         this.renderTeams();
         this.renderGallery();
         this.initServerStatus();
@@ -187,7 +187,7 @@ export class Gearbound implements AfterViewInit, OnDestroy {
         animate();
     }
 
-    // @SERVER @STATUS
+    // @SERVER @STATUS @INIT
     private initServerStatus() {
         fetch(`https://api.mcsrvstat.us/3/${this.serverIp}`)
             .then(response => response.json())
@@ -230,7 +230,7 @@ export class Gearbound implements AfterViewInit, OnDestroy {
             });
     }
 
-    // @COPY @IP
+    // @COPY @IP @INIT
     private initCopyButton() {
         const btn = document.querySelector<HTMLButtonElement>('.copy-btn');
         if (btn) {
@@ -344,6 +344,7 @@ export class Gearbound implements AfterViewInit, OnDestroy {
         requestAnimationFrame(animate);
     }
 
+    // @GALLERY @SCROLL
     private handleGalleryScroll() {
         const track = document.getElementById('gallery-track');
         if (!track) return;
