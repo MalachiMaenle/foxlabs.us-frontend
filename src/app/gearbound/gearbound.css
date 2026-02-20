@@ -13,33 +13,32 @@ body {
     --text-muted: #a0a0a0;
     --bg-dark: #121212;
 
-    --modrinth-l: #4dd39e;
+    --modrinth-l: #4dd383;
     --modrinth: #30b27b;
-    --modrinth-d: #207e56;
+    --modrinth-d: #207e79;
 
     --curseforge-l: #ea936b;
     --curseforge: #f16436;
     --curseforge-d: #b5401b;
 
-    --prism-l: #84abe7;
+    --prism-l: #84c3e7;
     --prism: #5b7fb5;
-    --prism-d: #3d5880;
+    --prism-d: #3d5080;
 
-    --discord-l: #7181dc;
+    --discord-l: #7198dc;
     --discord: #5865F2;
-    --discord-d: #3944b3;
+    --discord-d: #4139b3;
 
-    --stoat-l: #CEA2DB;
+    --stoat-l: #dba2d0;
     --stoat: #C35D9E;
-    --stoat-d: #F02978;
+    --stoat-d: #b92761;
 
-    /* @CSS @COLORS @BLUEMAP */
-    --bluemap-l: #3a8ee6;
+    --bluemap-l: #3aa4e6;
     --bluemap: #006cdb;
-    --bluemap-d: #004a96;
+    --bluemap-d: #003496;
 }
 
-/* @CSS @SCROLLBAR */
+/* @SCROLLBAR */
 ::-webkit-scrollbar {
     width: 12px;
     background: #151515;
@@ -87,7 +86,7 @@ body {
     position: relative;
 }
 
-/* @CSS @NAV */
+/* @NAV */
 nav {
     background: #1e1e1ecc;
     border-bottom: 1px solid #eebb6633;
@@ -118,7 +117,7 @@ nav {
     color: var(--brass-l);
 }
 
-/* @CSS @NAV @ICON */
+/* @NAV @ICON */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -352,7 +351,7 @@ nav {
     text-decoration: none;
 }
 
-/* @CSS @HEADER @HERO */
+/* @HEADER @HERO */
 header {
     min-height: 100vh;
     display: flex;
@@ -427,7 +426,7 @@ header {
     max-width: 600px;
 }
 
-/* @CSS @BACKGROUND @GEARS */
+/* @BACKGROUND @GEARS */
 .gear-container {
     position: fixed;
     inset: 0;
@@ -446,25 +445,25 @@ header {
 }
 
 .gear-1 {
-    top: -15vh;
-    left: -15vw;
-    width: 65vw;
-    height: 65vw;
-    min-width: 450px;
-    min-height: 450px;
-    max-width: 1200px;
-    max-height: 1200px;
+    top: -10vh;
+    left: calc(10vw - 300px);
+    width: calc(40vw + 300px);
+    height: calc(40vw + 300px);
+    min-width: 600px;
+    min-height: 600px;
+    max-width: 2000px;
+    max-height: 2000px;
 }
 
 .gear-2 {
     bottom: -20vh;
-    right: -20vw;
-    width: 80vw;
-    height: 80vw;
-    min-width: 600px;
-    min-height: 600px;
-    max-width: 1500px;
-    max-height: 1500px;
+    right: calc(-15vw - 200px);
+    width: calc(40vw + 400px);
+    height: calc(40vw + 400px);
+    min-width: 800px;
+    min-height: 800px;
+    max-width: 3200px;
+    max-height: 3200px;
 }
 
 .section-title {
@@ -509,7 +508,7 @@ header {
     gap: 3rem;
 }
 
-/* @CSS @CARDS */
+/* @CARDS */
 .card {
     background: rgba(45, 45, 45, 0.6);
     backdrop-filter: blur(12px);
@@ -658,7 +657,7 @@ header {
     --card-bloom: rgb(from var(--bluemap) r g b / 0.6);
 }
 
-/* @CSS @PRISM @RECOMMENDED */
+/* @PRISM @RECOMMENDED */
 #prism {
     border: 2px solid var(--prism-l);
     background: linear-gradient(145deg, rgba(45, 45, 45, 0.9), rgba(61, 88, 128, 0.2));
@@ -693,7 +692,7 @@ header {
 }
 
 .btn-curse {
-    background: linear-gradient(135deg, var(--curseforge), var(--curseforge));
+    background: linear-gradient(135deg, var(--curseforge), var(--curseforge-d));
     box-shadow: 0 4px 15px rgb(from var(--curseforge-d) r g b / 0.6);
     --hover-color: var(--curseforge-l)
 }
@@ -732,6 +731,16 @@ header {
     width: auto;
     display: inline-flex;
     padding: 0 2rem;
+}
+
+.btn-discord svg, .btn-stoat svg {
+    /* side ways arrow */
+    transform: rotate(-90deg);
+}
+
+.btn-discord:hover svg, .btn-stoat:hover svg {
+    animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    fill: #121212;
 }
 
 .btn {
@@ -886,7 +895,7 @@ header {
     }
 }
 
-/* @CSS @TABS */
+/* @TABS */
 .tabs {
     display: flex;
     justify-content: center;
@@ -959,6 +968,11 @@ header {
     margin-bottom: 0.8rem;
 }
 
+.tab-content .icon {
+    position: relative;
+    top: -4px;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -1017,7 +1031,7 @@ header {
     color: #000;
 }
 
-/* @CSS @SERVER @STATUS */
+/* @SERVER @STATUS */
 .status-card {
     background: rgba(45, 45, 45, 0.6);
     backdrop-filter: blur(12px);
@@ -1144,7 +1158,7 @@ header {
     color: var(--text-muted);
 }
 
-/* @CSS @TEAM */
+/* @TEAM */
 .team-card {
     background: rgba(45, 45, 45, 0.4);
     padding: 1.5rem;
@@ -1189,7 +1203,7 @@ img {
     -webkit-user-drag: none;   /* Prevents dragging the image ghost */
 }
 
-/* @CSS @GALLERY */
+/* @GALLERY */
 .gallery-controls {
     display: flex;
     justify-content: flex-end;
@@ -1303,7 +1317,7 @@ img {
     transition: transform 0.5s ease;
 }
 
-/* @CSS @GALLERY @EXPANDED */
+/* @GALLERY @EXPANDED */
 .gallery-track.expanded {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -1375,7 +1389,7 @@ img {
     animation: fadeIn 0.5s;
 }
 
-/* @CSS @FOOTER */
+/* @FOOTER */
 .footer-controls {
     display: flex;
     justify-content: center;
@@ -1453,4 +1467,51 @@ svg {
     .gallery-item {
         width: 85vw;
     }
+}
+
+/* @LIGHTBOX */
+.gallery-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-lightbox.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.gallery-lightbox img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    border: 2px solid var(--brass-l);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.lightbox-close:hover {
+    color: var(--brass-l);
 }

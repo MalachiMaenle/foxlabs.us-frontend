@@ -52,74 +52,81 @@ export class Gearbound implements AfterViewInit, OnDestroy {
     private autoScrollTimeout: any = 0;
     private readonly AUTO_RESUME_DELAY = 4000;
 
-    // Gallery Data
-    private galleryImages = [
-        {
-            src: "../../../assets/gearbound/screenshots/placeholder/2026-02-03_07.24.47.png",
-            title: "Cave",
-            desc: "Shader: Eclipse <br> placeholder image for community made images"
-        },
-        {
-            src: "../../../assets/gearbound/screenshots/placeholder/2026-02-03_07.29.29.png",
-            title: "Ancient city",
-            desc: "Shader: Eclipse <br> placeholder image for community made images"
-        },
-        {
-            src: "../../../assets/gearbound/screenshots/placeholder/2026-02-03_07.30.48.png",
-            title: "the Nether!",
-            desc: "Shader: Eclipse <br> placeholder image for community made images"
-        },
-        {
-            src: "../../../assets/gearbound/screenshots/placeholder/2026-02-03_07.31.02.png",
-            title: "A Cozy Place",
-            desc: "Shader: Eclipse <br> placeholder image for community made images"
-        },
-        {
-            src: "../../../assets/gearbound/screenshots/placeholder/2026-02-03_07.33.06.png",
-            title: "Spooky Scary Skelleton",
-            desc: "Shader: Eclipse <br> placeholder image for community made images"
-        },
-        {
-            src: "../../../assets/gearbound/screenshots/placeholder/2026-02-03_07.35.26.png",
-            title: "Epic end fight soon?",
-            desc: "Shader: Eclipse <br> placeholder image for community made images"
-        },
-        {
-            src: "../../../assets/gearbound/screenshots/placeholder/2026-02-03_07.38.01.png",
-            title: "End citys from a long time ago",
-            desc: "Shader: Eclipse <br> placeholder image for community made images"
-        },
-        {
-            src: "../../../assets/gearbound/screenshots/placeholder/2026-02-03_13.59.39.png",
-            title: "A Cold night",
-            desc: "Shader: Eclipse <br> placeholder image for community made images"
-        },
-        {
-            src: "../../../assets/gearbound/screenshots/placeholder/2026-02-04_03.47.03.png",
-            title: "Caves",
-            desc: "Looks good even in vanilla <br> placeholder image for community made images"
-        },
-        {
-            src: "../../../assets/gearbound/screenshots/placeholder/2026-02-04_03.55.40.png",
-            title: "A Undrground Eco System",
-            desc: "Shader: Eclipse <br> placeholder image for community made images"
-        },
-        {
-            src: "../../../assets/gearbound/screenshots/placeholder/2026-02-04_04.00.39.png",
-            title: "???",
-            desc: "Shader: Eclipse <br> placeholder image for community made images"
-        },
-        {
-            src: "../../../assets/gearbound/screenshots/placeholder/2026-02-16_10.13.44.png",
-            title: "Another Night Survived!",
-            desc: "Shader: Eclipse <br> placeholder image for community made images"
-        },
-        {
-            src: "../../../assets/gearbound/screenshots/placeholder/2026-02-16_10.22.03.png",
-            title: "Desert",
-            desc: "Shader: Eclipse <br> placeholder image for community made images"
-        },
-    ];
+    private galleryData: any = {
+        "Placeholder": [
+            {
+                src: "../../../assets/gearbound/screenshots/placeholder/2026-02-03_07.24.47.png",
+                title: "Cave",
+                desc: "Shader: Eclipse <br> placeholder image for community made images"
+            },
+            {
+                src: "../../../assets/gearbound/screenshots/placeholder/2026-02-03_07.29.29.png",
+                title: "Ancient city",
+                desc: "Shader: Eclipse <br> placeholder image for community made images"
+            },
+            {
+                src: "../../../assets/gearbound/screenshots/placeholder/2026-02-03_07.30.48.png",
+                title: "the Nether!",
+                desc: "Shader: Eclipse <br> placeholder image for community made images"
+            },
+            {
+                src: "../../../assets/gearbound/screenshots/placeholder/2026-02-03_07.31.02.png",
+                title: "A Cozy Place",
+                desc: "Shader: Eclipse <br> placeholder image for community made images"
+            },
+            {
+                src: "../../../assets/gearbound/screenshots/placeholder/2026-02-03_07.33.06.png",
+                title: "Spooky Scary Skelleton",
+                desc: "Shader: Eclipse <br> placeholder image for community made images"
+            },
+            {
+                src: "../../../assets/gearbound/screenshots/placeholder/2026-02-03_07.35.26.png",
+                title: "Epic end fight soon?",
+                desc: "Shader: Eclipse <br> placeholder image for community made images"
+            },
+            {
+                src: "../../../assets/gearbound/screenshots/placeholder/2026-02-03_07.38.01.png",
+                title: "End citys from a long time ago",
+                desc: "Shader: Eclipse <br> placeholder image for community made images"
+            },
+            {
+                src: "../../../assets/gearbound/screenshots/placeholder/2026-02-03_13.59.39.png",
+                title: "A Cold night",
+                desc: "Shader: Eclipse <br> placeholder image for community made images"
+            },
+            {
+                src: "../../../assets/gearbound/screenshots/placeholder/2026-02-04_03.47.03.png",
+                title: "Caves",
+                desc: "Looks good even in vanilla <br> placeholder image for community made images"
+            },
+            {
+                src: "../../../assets/gearbound/screenshots/placeholder/2026-02-04_03.55.40.png",
+                title: "A Undrground Eco System",
+                desc: "Shader: Eclipse <br> placeholder image for community made images"
+            },
+            {
+                src: "../../../assets/gearbound/screenshots/placeholder/2026-02-04_04.00.39.png",
+                title: "???",
+                desc: "Shader: Eclipse <br> placeholder image for community made images"
+            },
+            {
+                src: "../../../assets/gearbound/screenshots/placeholder/2026-02-16_10.13.44.png",
+                title: "Another Night Survived!",
+                desc: "Shader: Eclipse <br> placeholder image for community made images"
+            },
+            {
+                src: "../../../assets/gearbound/screenshots/placeholder/2026-02-16_10.22.03.png",
+                title: "Desert",
+                desc: "Shader: Eclipse <br> placeholder image for community made images"
+            },
+        ],
+        "Terrain Gen": [
+        ],
+        "Player Builds": [
+        ]
+    };
+    // get first tab category and make that the default
+    private currentCategory: string = Object.keys(this.galleryData)[0];
 
     constructor(private ngZone: NgZone) {}
 
@@ -131,11 +138,18 @@ export class Gearbound implements AfterViewInit, OnDestroy {
 
         // @INIT @ALL
         this.renderTeams();
+        this.renderTabs();
         this.renderGallery();
         this.initServerStatus();
         this.initCopyButton();
         this.initGalleryControls();
         this.initTabs();
+
+        document.addEventListener('keydown', (event: KeyboardEvent) => {
+            if (event.key === 'Escape') {
+                this.closeLightbox();
+            }
+        });
     }
 
     ngOnDestroy() {
@@ -157,10 +171,9 @@ export class Gearbound implements AfterViewInit, OnDestroy {
 
         // @GEAR @CONFIG
         const parallaxSpeed = 0.35;
-
         const baseSpeed = 0.02;
         const scrollInputMult = 0.002;
-        const friction = 0.994;
+        const friction = 0.993;
 
         let totalScrollRotation = 0;
         let rotationalVelocity = 0;
@@ -183,7 +196,6 @@ export class Gearbound implements AfterViewInit, OnDestroy {
 
             this.animationFrameId = requestAnimationFrame(animate);
         };
-
         animate();
     }
 
@@ -290,38 +302,62 @@ export class Gearbound implements AfterViewInit, OnDestroy {
             return list.map(img => `<div class="gallery-item"><img src="${img.src}" alt="${img.title}" loading="lazy"><div class="gallery-caption"><h4>${img.title}</h4><p>${img.desc}</p></div></div>`).join('');
         };
 
-        container.innerHTML = renderSet(this.galleryImages) + renderSet(this.galleryImages) + renderSet(this.galleryImages);
+        if (this.isGalleryExpanded) {
+            // Expanded mode: Only show the currently selected tab
+            const currentImages = this.galleryData[this.currentCategory] || [];
+            container.innerHTML = renderSet(currentImages);
+        } else {
+            // Compact mode: Combine ALL images from ALL tabs for the infinite scroll
+            let allImages: any[] = [];
+            Object.values(this.galleryData).forEach((imageArray: any) => {
+                allImages = allImages.concat(imageArray);
+            });
 
-        track.addEventListener('scroll', () => this.handleGalleryScroll());
-        track.addEventListener('mouseenter', () => this.isHoveringGallery = true);
-        track.addEventListener('mouseleave', () => this.isHoveringGallery = false);
+            // Duplicate the massive list 3 times for the infinite effect
+            container.innerHTML = renderSet(allImages) + renderSet(allImages) + renderSet(allImages);
+        }
 
-        track.addEventListener('wheel', (e) => {
+        const newTrack = track.cloneNode(true) as HTMLElement;
+        track.parentNode?.replaceChild(newTrack, track);
+
+        newTrack.addEventListener('scroll', () => this.handleGalleryScroll());
+        newTrack.addEventListener('mouseenter', () => this.isHoveringGallery = true);
+        newTrack.addEventListener('mouseleave', () => this.isHoveringGallery = false);
+
+        newTrack.addEventListener('wheel', (e) => {
             if (!this.isGalleryExpanded) {
                 e.preventDefault();
-                track.style.scrollBehavior = 'auto';
-                this.scrollVelocity += e.deltaY * 0.5;
+                newTrack.style.scrollBehavior = 'auto';
+                this.scrollVelocity += (e as WheelEvent).deltaY * 0.5;
                 this.handleUserInteraction();
             }
         }, { passive: false });
 
-        track.addEventListener('click', (e: Event) => {
+        newTrack.addEventListener('click', (e: Event) => {
             const target = (e.target as HTMLElement).closest('.gallery-item') as HTMLElement;
-            if (target && track.contains(target)) {
+            if (target && newTrack.contains(target)) {
                 this.handleUserInteraction();
+                const img = target.querySelector('img');
+
                 if (!this.isGalleryExpanded) {
-                    const center = target.offsetLeft + (target.offsetWidth / 2) - (track.clientWidth / 2);
-                    track.scrollTo({ left: center, behavior: 'smooth' });
+                    const center = target.offsetLeft + (target.offsetWidth / 2) - (newTrack.clientWidth / 2);
+                    newTrack.scrollTo({ left: center, behavior: 'smooth' });
                     this.scrollVelocity = 0;
+
+                    if (img) this.openLightbox(img.src);
+                } else {
+                    if (img) this.openLightbox(img.src);
                 }
             }
         });
 
-        setTimeout(() => {
-            track.scrollLeft = track.scrollWidth / 3;
-            this.updateGalleryScaling();
-            this.startGalleryAutoScroll();
-        }, 100);
+        if (!this.isGalleryExpanded) {
+            setTimeout(() => {
+                newTrack.scrollLeft = newTrack.scrollWidth / 3;
+                this.updateGalleryScaling();
+                this.startGalleryAutoScroll();
+            }, 100);
+        }
     }
 
     // @GALLERY @INIT @MOVEMENT
@@ -514,25 +550,98 @@ export class Gearbound implements AfterViewInit, OnDestroy {
 
     // @GALLERY @EXPAND
     private toggleGalleryExpand() {
-        const track = document.getElementById('gallery-track');
         const btn = document.getElementById('galleryExpandBtn');
+        const tabsContainer = document.getElementById('gallery-sub-tabs');
         this.isGalleryExpanded = !this.isGalleryExpanded;
 
-        if (!track || !btn) return;
+        if (!btn) return;
 
         if (this.isGalleryExpanded) {
-            track.classList.add('expanded');
             btn.classList.add('active');
-            const items = track.querySelectorAll('.gallery-item') as NodeListOf<HTMLElement>;
-            items.forEach(item => {
-                item.style.transform = '';
-                item.style.opacity = '';
-                item.classList.remove('active');
-            });
+            if (tabsContainer) tabsContainer.style.display = 'flex';
+            this.renderGallery();
+
+            setTimeout(() => {
+                const track = document.getElementById('gallery-track');
+                if (track) {
+                    track.classList.add('expanded');
+                    const items = track.querySelectorAll('.gallery-item') as NodeListOf<HTMLElement>;
+                    items.forEach(item => {
+                        item.style.transform = '';
+                        item.style.opacity = '1';
+                        item.classList.remove('active');
+                    });
+                }
+            }, 50);
         } else {
-            track.classList.remove('expanded');
             btn.classList.remove('active');
-            this.updateGalleryScaling();
+            if (tabsContainer) tabsContainer.style.display = 'none';
+
+            const track = document.getElementById('gallery-track');
+            if (track) track.classList.remove('expanded');
+            this.renderGallery();
         }
+    }
+
+    filterGallery(category: string) {
+        this.currentCategory = category;
+        const tabs = document.querySelectorAll('#gallery-sub-tabs .tab-btn');
+
+        tabs.forEach(tab => {
+            if (tab.getAttribute('data-cat') === category) {
+                tab.classList.add('active');
+            } else {
+                tab.classList.remove('active');
+            }
+        });
+
+        this.renderGallery();
+
+        setTimeout(() => {
+            const track = document.getElementById('gallery-track');
+            if (track) {
+                const items = track.querySelectorAll('.gallery-item') as NodeListOf<HTMLElement>;
+                items.forEach(item => {
+                    item.style.transform = '';
+                    item.style.opacity = '1';
+                });
+            }
+        }, 10);
+    }
+
+    openLightbox(src: string) {
+        const lightbox = document.getElementById('gallery-lightbox');
+        const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+        if (lightbox && lightboxImg) {
+            lightboxImg.src = src;
+            lightbox.classList.add('active');
+        }
+    }
+
+    closeLightbox() {
+        const lightbox = document.getElementById('gallery-lightbox');
+        if (lightbox) lightbox.classList.remove('active');
+    }
+
+    private renderTabs() {
+        const tabsContainer = document.getElementById('gallery-sub-tabs');
+        if (!tabsContainer) return;
+        tabsContainer.innerHTML = '';
+
+        Object.keys(this.galleryData).forEach(category => {
+            const btn = document.createElement('button');
+            btn.className = 'tab-btn';
+
+            if (this.currentCategory === category) {
+                btn.classList.add('active');
+            }
+            btn.setAttribute('data-cat', category);
+            btn.innerText = category;
+            btn.addEventListener('click', () => {
+                this.filterGallery(category);
+            });
+
+            tabsContainer.appendChild(btn);
+        });
     }
 }
