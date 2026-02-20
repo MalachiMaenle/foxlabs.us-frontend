@@ -13,30 +13,32 @@ body {
     --text-muted: #a0a0a0;
     --bg-dark: #121212;
 
-    --modrinth-l: #4dd39e;
+    --modrinth-l: #4dd383;
     --modrinth: #30b27b;
-    --modrinth-d: #207e56;
+    --modrinth-d: #207e79;
 
     --curseforge-l: #ea936b;
     --curseforge: #f16436;
     --curseforge-d: #b5401b;
 
-    --prism-l: #84abe7;
+    --prism-l: #84c3e7;
     --prism: #5b7fb5;
-    --prism-d: #3d5880;
+    --prism-d: #3d5080;
 
-    --discord-l: #7181dc;
+    --discord-l: #7198dc;
     --discord: #5865F2;
-    --discord-d: #3944b3;
+    --discord-d: #4139b3;
 
-    /* @CSS @COLORS @BLUEMAP */
-    /* Updated to darker blue as requested */
-    --bluemap-l: #3a8ee6;
+    --stoat-l: #dba2d0;
+    --stoat: #C35D9E;
+    --stoat-d: #b92761;
+
+    --bluemap-l: #3aa4e6;
     --bluemap: #006cdb;
-    --bluemap-d: #004a96;
+    --bluemap-d: #003496;
 }
 
-/* @CSS @SCROLLBAR */
+/* @SCROLLBAR */
 ::-webkit-scrollbar {
     width: 12px;
     background: #151515;
@@ -76,6 +78,7 @@ body {
     url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23333333' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     color: var(--text-main);
 
+    /* text */
     font-family: 'Montserrat', sans-serif; /* Modern font */
     font-size: 1rem;
     line-height: 1.6;
@@ -83,7 +86,7 @@ body {
     position: relative;
 }
 
-/* @CSS @NAV */
+/* @NAV */
 nav {
     background: #1e1e1ecc;
     border-bottom: 1px solid #eebb6633;
@@ -100,19 +103,21 @@ nav {
 }
 
 .nav-brand {
+    /* text */
     font-family: 'Russo One', sans-serif;
-    color: var(--brass-l);
     font-size: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     text-decoration: none;
+
     align-items: center;
-    gap: 0.5rem;
     white-space: nowrap;
     margin-right: auto;
+    gap: 0.5rem;
+    color: var(--brass-l);
 }
 
-/* @CSS @NAV @ICON */
+/* @NAV @ICON */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -138,8 +143,6 @@ nav {
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* Mechanical "Stack then Rotate" Animation */
-/* Neutral State positions */
 .hamburger span:nth-child(1) {
     transform: translateY(-9px);
 }
@@ -152,10 +155,9 @@ nav {
     transform: translateY(9px);
 }
 
-/* Active State */
 .hamburger.active span:nth-child(1) {
     transform: translateY(0) rotate(45deg);
-    transition-delay: 0.1s; /* Slight delay for the rotation feel */
+    transition-delay: 0.1s;
 }
 
 .hamburger.active span:nth-child(2) {
@@ -168,10 +170,9 @@ nav {
     transition-delay: 0.1s;
 }
 
-/* Hover Effect for Burger - Reduced Glow as requested */
 .hamburger:hover span {
     background-color: #fff;
-    box-shadow: 0 0 2px rgba(238, 187, 102, 0.5); /* Much subtler glow */
+    box-shadow: 0 0 2px rgba(238, 187, 102, 0.5);
 }
 
 .nav-links {
@@ -181,12 +182,14 @@ nav {
 }
 
 .nav-links a {
-    color: var(--text-main);
+    /* text */
     text-decoration: none;
     font-weight: 600;
     font-size: 0.95rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+
+    color: var(--text-main);
     transition: color 0.3s, transform 0.2s;
     position: relative;
     white-space: nowrap;
@@ -211,7 +214,6 @@ nav {
     width: 100%;
 }
 
-/* @CSS @NAV @RESPONSIVE */
 @media (max-width: 1100px) {
     .nav-item-about {
         display: none !important;
@@ -224,11 +226,8 @@ nav {
     .hamburger {
         display: flex;
     }
-
-    /* Show burger button */
 }
 
-/* Step 2: Hide "Help" */
 @media (max-width: 1000px) {
     .nav-item-help {
         display: none !important;
@@ -239,7 +238,6 @@ nav {
     }
 }
 
-/* Step 3: Hide "Downloads" */
 @media (max-width: 900px) {
     .nav-item-downloads {
         display: none !important;
@@ -250,7 +248,6 @@ nav {
     }
 }
 
-/* Step 4: Hide "Gallery" */
 @media (max-width: 800px) {
     .nav-item-gallery {
         display: none !important;
@@ -261,7 +258,6 @@ nav {
     }
 }
 
-/* Step 5: Hide "Teams" */
 @media (max-width: 700px) {
     .nav-item-teams {
         display: none !important;
@@ -272,13 +268,11 @@ nav {
     }
 }
 
-/* Step 6: Hide "Status" & "Home" - Full Mobile Mode */
 @media (max-width: 600px) {
     .nav-links {
         display: none;
     }
 
-    /* Hide entire top bar nav container */
     .mob-nav-item-status {
         display: block !important;
     }
@@ -289,9 +283,8 @@ nav {
 }
 
 
-/* Mobile Menu Dropdown Styles */
-.mobile-menu {
-    display: none; /* Hidden until triggered */
+.drop-down {
+    display: none;
     flex-direction: column;
     position: absolute;
     top: 80px;
@@ -308,26 +301,27 @@ nav {
     z-index: 1050;
 }
 
-/* Mobile Menu Items - Default Hidden */
-.mobile-menu a {
-    display: none; /* Only show when needed */
-    color: var(--text-main);
-    text-decoration: none;
+.drop-down a {
+    /* text */
     font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
     text-transform: uppercase;
+
+    display: none;
+    color: var(--text-main);
     letter-spacing: 1px;
     padding: 1rem 0;
-    font-size: 1.1rem;
     border-bottom: 1px solid rgba(238, 187, 102, 0.1);
     transition: background 0.2s;
 }
 
-.mobile-menu.active {
+.drop-down.active {
     display: flex;
     animation: slideIn 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.mobile-menu a:hover {
+.drop-down a:hover {
     background: rgba(238, 187, 102, 0.1);
     color: var(--brass-l);
 }
@@ -343,13 +337,12 @@ nav {
     }
 }
 
-/* HAMBURGER ANIMATION: Rotate 90deg */
 .hamburger.active {
     transform: rotate(90deg);
 }
 
 .hamburger.active span {
-    background-color: var(--modrinth); /* Change color to active green */
+    background-color: var(--modrinth);
     box-shadow: 0 0 5px var(--modrinth-d);
 }
 
@@ -358,7 +351,7 @@ nav {
     text-decoration: none;
 }
 
-/* @CSS @HEADER @HERO */
+/* @HEADER @HERO */
 header {
     min-height: 100vh;
     display: flex;
@@ -386,19 +379,17 @@ header {
 }
 
 .icon {
-    width: 26px;
-    height: 26px;
+    width: 28px;
+    height: 28px;
     vertical-align: middle;
-    position: relative;
-    top: -4px;
 }
 
 .modrinth-icon {
-    /* Dynamic Sizing relative to text */
-    width: 1.2em; /* Size is now 1.2x the current font size */
+    /* in em to scale with text */
+    width: 1.2em;
     height: 1.2em;
-    flex-shrink: 0; /* Prevents icon from squishing if text is long */
-    display: block; /* Removes distinct baseline issues */
+    flex-shrink: 0;
+    display: block;
 }
 
 @keyframes float {
@@ -411,27 +402,31 @@ header {
 }
 
 .hero-title {
+    /* text */
     font-family: 'Russo One', sans-serif;
     font-size: 4rem;
+    text-transform: uppercase;
+
     background: linear-gradient(180deg, var(--brass-l) 0%, #d4a048 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-transform: uppercase;
     margin: 0;
     letter-spacing: 2px;
     filter: drop-shadow(0 4px 0 rgba(0, 0, 0, 0.5));
 }
 
 .hero-subtitle {
+    /* text */
     font-size: 1.2rem;
+    font-weight: 400;
+
     color: var(--text-muted);
     margin-top: 1rem;
     margin-bottom: 3rem;
     max-width: 600px;
-    font-weight: 400;
 }
 
-/* @CSS @BACKGROUND @GEARS */
+/* @BACKGROUND @GEARS */
 .gear-container {
     position: fixed;
     inset: 0;
@@ -443,41 +438,45 @@ header {
 .gear-bg {
     position: absolute;
     fill: var(--brass-l);
-    color: #2b2a2a
+    color: #2b2a2a;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
-/* UPDATED: Larger Responsive Gear Sizes (Increased by ~50%) */
 .gear-1 {
-    top: -15vh;
-    left: -15vw;
-    width: 65vw; /* Was 45vw */
-    height: 65vw; /* Was 45vw */
-    min-width: 450px;
-    min-height: 450px;
-    max-width: 1200px;
-    max-height: 1200px;
+    top: -10vh;
+    left: calc(10vw - 300px);
+    width: calc(40vw + 300px);
+    height: calc(40vw + 300px);
+    min-width: 600px;
+    min-height: 600px;
+    max-width: 2000px;
+    max-height: 2000px;
 }
 
 .gear-2 {
     bottom: -20vh;
-    right: -20vw;
-    width: 80vw; /* Was 55vw */
-    height: 80vw; /* Was 55vw */
-    min-width: 600px;
-    min-height: 600px;
-    max-width: 1500px;
-    max-height: 1500px;
+    right: calc(-15vw - 200px);
+    width: calc(40vw + 400px);
+    height: calc(40vw + 400px);
+    min-width: 800px;
+    min-height: 800px;
+    max-width: 3200px;
+    max-height: 3200px;
 }
 
 .section-title {
+    /* text */
     font-family: 'Russo One', sans-serif;
     font-size: 2.2rem;
-    color: var(--text-main);
     text-align: center;
-    margin-bottom: 4rem;
-    position: relative;
     text-transform: uppercase;
     letter-spacing: 1px;
+
+    color: var(--text-main);
+    margin-bottom: 4rem;
+    position: relative;
     z-index: 1;
 }
 
@@ -499,18 +498,22 @@ header {
     z-index: 1;
 }
 
+.container-thin {
+    max-width: 1000px;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 3rem;
 }
 
-/* @CSS @CARDS */
+/* @CARDS */
 .card {
     background: rgba(45, 45, 45, 0.6);
-    backdrop-filter: blur(12px); /* Glassmorphism */
+    backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px; /* Rounded corners */
+    border-radius: 16px;
     padding: 2.5rem 2rem;
     position: relative;
     transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s, border-color 0.3s;
@@ -589,14 +592,16 @@ header {
 }
 
 .card h3 {
+    /* text */
     font-family: 'Russo One', sans-serif;
     font-size: 1.6rem;
+    letter-spacing: 2px;
+
+    gap: 12px;
     margin-top: 0;
     color: var(--text-main);
-    letter-spacing: 2px;
     display: flex;
     align-items: center;
-    gap: 12px;
     z-index: 1;
 }
 
@@ -642,13 +647,17 @@ header {
     --card-bloom: rgb(from var(--discord) r g b / 0.6);
 }
 
+.card-stoat {
+    --card-accent: var(--stoat);
+    --card-bloom: rgb(from var(--stoat) r g b / 0.6);
+}
+
 .card-bluemap {
     --card-accent: var(--bluemap);
     --card-bloom: rgb(from var(--bluemap) r g b / 0.6);
 }
 
-/* @CSS @PRISM @RECOMMENDED */
-/* Make Prism card stand out */
+/* @PRISM @RECOMMENDED */
 #prism {
     border: 2px solid var(--prism-l);
     background: linear-gradient(145deg, rgba(45, 45, 45, 0.9), rgba(61, 88, 128, 0.2));
@@ -663,21 +672,27 @@ header {
 
 .badge-recommended {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 12px;
+    right: 10px;
+    padding: 6px 12px;
+
+    /* color */
     background: var(--prism);
     color: white;
+
+    /* text */
     font-family: 'Russo One', sans-serif;
-    font-size: 0.7rem;
-    padding: 4px 10px;
-    border-radius: 4px;
+    font-size: 0.8rem;
     text-transform: uppercase;
+    letter-spacing: 1px;
+
+    border-radius: 4px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     z-index: 10;
 }
 
 .btn-curse {
-    background: linear-gradient(135deg, var(--curseforge), var(--curseforge));
+    background: linear-gradient(135deg, var(--curseforge), var(--curseforge-d));
     box-shadow: 0 4px 15px rgb(from var(--curseforge-d) r g b / 0.6);
     --hover-color: var(--curseforge-l)
 }
@@ -701,7 +716,7 @@ header {
 }
 
 .btn-discord {
-    background: var(--discord);
+    background: linear-gradient(135deg, var(--discord), var(--discord-d));
     box-shadow: 0 4px 15px rgb(from var(--discord-d) r g b / 0.6);
     --hover-color: var(--discord-l);
     width: auto;
@@ -709,77 +724,101 @@ header {
     padding: 0 2rem;
 }
 
+.btn-stoat {
+    background: linear-gradient(135deg, var(--stoat), var(--stoat-d));
+    box-shadow: 0 4px 15px rgb(from var(--stoat-d) r g b / 0.6);
+    --hover-color: var(--stoat-l);
+    width: auto;
+    display: inline-flex;
+    padding: 0 2rem;
+}
+
+.btn-discord svg, .btn-stoat svg {
+    /* side ways arrow */
+    transform: rotate(-90deg);
+}
+
+.btn-discord:hover svg, .btn-stoat:hover svg {
+    animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    fill: #121212;
+}
+
 .btn {
     flex-grow: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px; /* Space between text and icon */
+    gap: 12px;
     padding: 0.5rem 1rem;
+
+    /* text */
     font-family: 'Russo One', sans-serif;
     text-transform: uppercase;
     text-decoration: none;
-    color: white;
-    border: none;
-    border-radius: 8px;
     font-size: 1rem;
+
+    color: white;
+    background-color: var(--andesite-surface);
+
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
     cursor: pointer;
     transition: transform 0.2s, filter 0.2s, box-shadow 0.2s, border-color 0.2s;
-    background-color: var(--andesite-surface);
-    border: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
     overflow: hidden;
     height: 60px;
 }
 
 .modrinth-style-button {
-    /* Layout & Alignment */
-    display: inline-flex; /* Allows flex alignment INSIDE, but flows like text OUTSIDE */
-    align-items: center; /* Vertically centers icon and text */
+    /* sizing */
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
     vertical-align: middle;
 
-    /* Sizing - DYNAMIC NOW */
-    width: auto; /* Removes fixed width */
-    height: 36px; /* Removes fixed height */
-    padding: 6px 12px; /* Controls the size via internal spacing */
-    margin: 0px 4px;
+    /* position */
+    width: auto;
+    height: 30px;
+    padding: 6px 8px;
+    margin: 0 4px;
     position: relative;
-    top: -6px;
+    top: -4px;
 
-    /* Styling */
+    /* style */
     background: var(--brass-d);
     border: 2px solid var(--brass-l);
-    border-radius: 12px;
+    border-radius: 10px;
     color: #fff;
 
-    /* Typography */
-    font-family: 'Inter', sans-serif; /* Simplified for readability */
+    /* text */
+    font-family: 'Inter', sans-serif;
     font-weight: 550;
-    font-size: 1rem;
-    letter-spacing: 0.5px;
-    line-height: 1.2; /* Standard line-height prevents vertical drift */
-    text-decoration: none; /* Just in case it's an <a> tag */
-    cursor: pointer; /* Good practice for buttons */
+    font-size: 0.9rem;
+    letter-spacing: 0.8px;
+    line-height: 1.2;
+    text-decoration: none;
 }
 
 .icon-box {
-    background-color: #000000a6; /* Darker background */
+    background-color: #000000a6;
+    border-radius: 50%;
+    box-shadow: inset 0 0 5px #00000080;
+
     width: 36px;
     height: 36px;
-    border-radius: 50%; /* Circular */
+
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    box-shadow: inset 0 0 5px #00000080;
     flex-shrink: 0;
 }
 
 .icon-text-container {
-    display: flex; /* Enables flexbox */
-    align-items: center; /* Vertically centers the SVG with the text */
-    gap: 0.5rem; /* Adds space between the items (approx 8px) */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .btn svg {
@@ -856,7 +895,7 @@ header {
     }
 }
 
-/* @CSS @TABS */
+/* @TABS */
 .tabs {
     display: flex;
     justify-content: center;
@@ -866,17 +905,23 @@ header {
 }
 
 .tab-btn {
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: var(--text-muted);
-    padding: 0.8rem 2rem;
+    /* text */
     font-family: 'Russo One', sans-serif;
-    cursor: pointer;
     font-size: 1rem;
-    transition: all 0.3s;
-    border-radius: 30px; /* Pill shape */
     text-transform: uppercase;
     letter-spacing: 1px;
+
+
+    background: transparent;
+    color: var(--text-muted);
+
+    /* border */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+
+    padding: 0.8rem 2rem;
+    cursor: pointer;
+    transition: all 0.3s;
 }
 
 .tab-btn:hover {
@@ -923,6 +968,11 @@ header {
     margin-bottom: 0.8rem;
 }
 
+.tab-content .icon {
+    position: relative;
+    top: -4px;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -962,16 +1012,18 @@ header {
 }
 
 .copy-btn {
+    /* text */
+    font-family: 'Russo One', sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+
     background: transparent;
     border: 1px solid var(--brass-l);
     color: var(--brass-l);
     padding: 0.4rem 1rem;
-    font-family: 'Russo One', sans-serif;
-    font-size: 0.8rem;
     cursor: pointer;
     border-radius: 20px;
     transition: all 0.2s;
-    text-transform: uppercase;
 }
 
 .copy-btn:hover {
@@ -979,7 +1031,7 @@ header {
     color: #000;
 }
 
-/* @CSS @SERVER @STATUS */
+/* @SERVER @STATUS */
 .status-card {
     background: rgba(45, 45, 45, 0.6);
     backdrop-filter: blur(12px);
@@ -1007,18 +1059,20 @@ header {
 
 .status-line {
     font-size: 1.3em;
-    margin: 10px 0;
     font-family: 'Russo One', sans-serif;
+    margin: 10px 0;
 }
 
 .online {
-    color: var(--modrinth);
+    /* text */
     font-weight: bold;
+    text-transform: uppercase;
+
+    color: var(--modrinth);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    text-transform: uppercase;
 }
 
 .offline {
@@ -1038,15 +1092,18 @@ header {
 }
 
 .player-list-header {
+    /* text */
     font-family: 'Russo One', sans-serif;
     font-size: 1.2rem;
-    color: var(--brass-l);
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-top: 1.5rem;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--brass-l);
 }
 
 .player-list {
@@ -1069,11 +1126,15 @@ header {
 }
 
 .player-head {
+    /* size */
     width: 48px;
     height: 48px;
+
+    /* border */
     border-radius: 8px;
-    background-color: var(--andesite-surface);
     border: 2px solid var(--brass-d);
+
+    background-color: var(--andesite-surface);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: border-color 0.2s;
 }
@@ -1083,46 +1144,66 @@ header {
 }
 
 .player-name {
+    /* text */
     font-size: 0.8rem;
-    margin-top: 6px;
-    color: var(--text-muted);
-    width: 100%;
-    text-align: center;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     font-weight: 600;
+    text-overflow: ellipsis;
+    text-align: center;
+
+    width: 100%;
+    margin-top: 6px;
+    overflow: hidden;
+    white-space: nowrap;
+
+    color: var(--text-muted);
 }
 
-/* @CSS @TEAM */
+/* @TEAM */
 .team-card {
     background: rgba(45, 45, 45, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
     padding: 1.5rem;
     text-align: center;
     transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .team-card:hover {
     background: rgba(60, 60, 60, 0.5);
-    /* Border color set via inline style */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .team-name {
+    /* text */
     font-family: 'Russo One', sans-serif;
-    /* Color set via inline style */
     font-size: 1.4rem;
-    margin-top: 0;
-    margin-bottom: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border-bottom: 1px solid rgba(238, 187, 102, 0.2);
+
+    margin-top: 0;
+    margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
+
+    border-bottom: 1px solid rgba(238, 187, 102, 0.2);
 }
 
-/* @CSS @GALLERY */
+::selection {
+    background: var(--brass-l);
+    color: #121212;
+}
+
+::-moz-selection {
+    background: var(--brass-l);
+    color: #121212;
+}
+
+img {
+    user-select: none;         /* Prevents the blue selection highlight */
+    -webkit-user-drag: none;   /* Prevents dragging the image ghost */
+}
+
+/* @GALLERY */
 .gallery-controls {
     display: flex;
     justify-content: flex-end;
@@ -1131,17 +1212,22 @@ header {
 }
 
 .gallery-control-btn {
-    background: rgba(45, 45, 45, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: var(--text-muted);
+    /* Pos */
     width: 40px;
     height: 40px;
-    border-radius: 50%;
+
     display: flex;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
+    align-items: center;
     transition: all 0.2s;
+    justify-content: center;
+
+    /* border */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+
+    color: var(--text-muted);
+    background: rgba(45, 45, 45, 0.6);
 }
 
 .gallery-control-btn:hover, .gallery-control-btn.active {
@@ -1155,65 +1241,67 @@ header {
     width: 100%;
     overflow: hidden;
     border-radius: 12px;
+
+    min-height: 400px;
     background: rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    min-height: 400px; /* Ensure space */
 }
 
 .gallery-track {
-    display: flex;
-    gap: 1rem; /* Reduced gap as requested */
-    overflow-x: auto;
-    scroll-behavior: auto; /* Changed to auto for physics control */
-    padding: 3rem 50%; /* Padding creates the center focus area */
-    /* Removed scroll snap for free scrolling */
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    align-items: center;
+    gap: 1rem;
     height: 500px;
+
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+
+    scroll-behavior: auto;
+    scrollbar-width: none;
+
+    padding: 3rem 50%;
 }
 
 .gallery-track::-webkit-scrollbar {
     display: none;
 }
 
-/* Carousel Item Style */
 .gallery-item {
     position: relative;
     border-radius: 12px;
     overflow: hidden;
-    width: 600px; /* Fixed Base Width */
+    width: 600px;
     flex-shrink: 0;
     background: var(--andesite-surface);
 
-    /* IMPORTANT: Border is now a pseudo-element to avoid messing with layout/content */
-    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.5s;
-    transform-origin: center center;
     opacity: 0.5;
     transform: scale(0.85);
     aspect-ratio: 16 / 9;
     cursor: pointer;
+
+    transform-origin: center center;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.5s;
 }
 
-/* Border Overlay Pseudo-element */
 .gallery-item::after {
     content: '';
     position: absolute;
+
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    border: 3px solid transparent;
+
+    z-index: 20;
     border-radius: 12px;
-    pointer-events: none; /* Let clicks pass through */
-    z-index: 20; /* Sit on top of everything */
+    pointer-events: none;
     transition: border-color 0.3s;
+    border: 3px solid transparent;
 }
 
-/* Active/Center Item (Handled by JS) */
 .gallery-item.active {
     opacity: 1;
-    transform: scale(1.15); /* Increased active scale */
+    transform: scale(1.15);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     z-index: 10;
 }
@@ -1225,29 +1313,28 @@ header {
 .gallery-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures filling without stretching */
+    object-fit: cover;
     transition: transform 0.5s ease;
 }
 
-/* @CSS @GALLERY @EXPANDED */
+/* @GALLERY @EXPANDED */
 .gallery-track.expanded {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 1.5rem;
     padding: 1.5rem;
     overflow-x: visible;
-    height: auto; /* Remove fixed height */
+    height: auto;
 }
 
 .gallery-track.expanded .gallery-item {
-    width: 100%; /* Reset width to fill grid cell */
-    transform: none; /* Remove scale */
+    width: 100%;
+    transform: none;
     opacity: 1;
     min-width: auto;
-    cursor: default; /* No clicking to center in grid mode */
+    cursor: default;
 }
 
-/* Ensure no border in grid view unless hovered */
 .gallery-track.expanded .gallery-item::after {
     border-color: rgba(255, 255, 255, 0.1);
 }
@@ -1255,23 +1342,25 @@ header {
 .gallery-track.expanded .gallery-item:hover::after {
     border-color: var(--brass-l);
 }
-
-/* Captions / Subtitles */
+/* @GALLERY @DESCRIPTION */
 .gallery-caption {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     padding: 0.8rem;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(8px);
+
+    background: rgba(0, 0, 0, 0.4);
     color: white;
+    backdrop-filter: blur(8px);
+
     transform: translateY(100%);
     transition: transform 0.3s ease;
     text-align: left;
-    z-index: 15; /* Below border overlay */
+    z-index: 15;
 }
 
+/* @GALLERY @DESCRIPTION @TITLE */
 .gallery-caption h4 {
     margin: 0 0 3px 0;
     font-family: 'Russo One', sans-serif;
@@ -1279,29 +1368,28 @@ header {
     font-size: 1rem;
 }
 
+/* @GALLERY @DESCRIPTION @TEXT */
 .gallery-caption p {
     margin: 0;
-    font-size: 0.75rem; /* Reduced size by half roughly */
+    font-size: 0.75rem;
     color: #ccc;
     line-height: 1.3;
 }
 
-/* Show caption on hover OR always if expanded/active */
 .gallery-item:hover .gallery-caption,
 .gallery-item.active .gallery-caption {
     transform: translateY(0);
 }
 
-/* NEW: Gallery Sub-Tabs for Expanded View */
 .gallery-sub-tabs {
-    display: none; /* Hidden by default */
+    display: none;
     justify-content: center;
     gap: 1rem;
     margin-bottom: 1.5rem;
     animation: fadeIn 0.5s;
 }
 
-/* @CSS @FOOTER */
+/* @FOOTER */
 .footer-controls {
     display: flex;
     justify-content: center;
@@ -1310,16 +1398,20 @@ header {
 }
 
 .footer-btn {
-    background: transparent;
-    border: 1px solid #444;
-    color: #888;
-    padding: 5px 15px;
+    /* text */
     font-size: 0.8rem;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.2s;
-    text-transform: uppercase;
     font-family: 'Russo One', sans-serif;
+    text-transform: uppercase;
+
+    background: transparent;
+    color: #888;
+
+    border: 1px solid #444;
+    border-radius: 20px;
+
+    cursor: pointer;
+    padding: 5px 15px;
+    transition: all 0.2s;
 }
 
 .footer-btn:hover {
@@ -1339,15 +1431,24 @@ svg {
 }
 
 .gearbound-footer {
+    /* text */
+    font-size: 0.9rem;
+    text-align: center;
+
     position: relative;
     z-index: 100;
-    background: #0a0a0aaa;
-    text-align: center;
     padding: 3rem 2rem;
     border-top: 1px solid #222;
     margin-top: 6rem;
+
+    /* color */
+    background: #0a0a0aaa;
     color: #666;
-    font-size: 0.9rem;
+}
+
+/* voodoo magic for fixing scrolling */
+.container[id], header[id] {
+    scroll-margin-top: 110px; /* scroll offset */
 }
 
 @media (max-width: 768px) {
@@ -1366,6 +1467,51 @@ svg {
     .gallery-item {
         width: 85vw;
     }
+}
 
-    /* Mobile gallery width */
+/* @LIGHTBOX */
+.gallery-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-lightbox.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.gallery-lightbox img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    border: 2px solid var(--brass-l);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.lightbox-close:hover {
+    color: var(--brass-l);
 }
